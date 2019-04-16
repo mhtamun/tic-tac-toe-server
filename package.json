@@ -1,0 +1,22 @@
+{
+  "name": "c-tac-toe-server",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mhtamun/tic-tac-toe-server#readme",
+  "description": "Tic-Tac-Toe game score storage server, a very powerful, yet flexible, GraphQL API based on Nodejs with Swagger documentation powered by MongoDB. The main backbone of our API will be Hapi.js",
+  "author": "Maruf Hossain <mhtamungmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhtamun/tic-tac-toe-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhtamun/tic-tac-toe-server/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "nodemon": "^1.18.11"
+  }
+}
