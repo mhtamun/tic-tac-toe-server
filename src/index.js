@@ -23,15 +23,7 @@ const init = async () => {
         require('./plugins/score'),
     ]);
 
-    server.route([
-        {
-            method: "GET",
-            path: "/",
-            handler: function (request, h) {
-                return '<h1>Welcome to Tic-Tac-Toe Server.</h1>'
-            },
-        },
-    ]);
+    server.route(require("./routes"));
 
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
