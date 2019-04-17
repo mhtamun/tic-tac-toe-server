@@ -28,5 +28,8 @@
     "nodemon": "^1.18.11",
     "relish": "^3.0.0",
     "vision": "^5.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }

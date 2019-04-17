@@ -1,32 +1,32 @@
-const hapi = require("hapi");
+const hapi = require('hapi');
 const inert = require('inert');
 const vision = require('vision');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost/ticTacToeServer", {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/ticTacToeServer', {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    console.log(`Connection with mongoDB established.`);
+	console.log('Connection with mongoDB established.');
 });
 
 const server = hapi.server({
-    host: "localhost",
-    port: 4567,
+	host: 'localhost',
+	port: 4567,
 });
 
 const init = async () => {
-    await server.register([
-        inert,
-        vision,
-        require('./plugins/score'),
-    ]);
+	await server.register([
+		inert,
+		vision,
+		require('./plugins/score'),
+	]);
 
-    server.route(require("./routes"));
+	server.route(require('./routes'));
 
-    await server.start();
-    console.log(`Server running at: ${server.info.uri}`);
+	await server.start();
+	console.log(`Server running at: ${server.info.uri}`);
 };
 
 init();
