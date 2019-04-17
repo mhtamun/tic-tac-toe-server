@@ -3,7 +3,7 @@ const inert = require('inert');
 const vision = require('vision');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/ticTacToeServer', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/ticTacToe', {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
