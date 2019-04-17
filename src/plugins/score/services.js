@@ -1,12 +1,26 @@
+const boom = require('boom');
+const _ = require('lodash');
 const Score = require("../../models/score");
 
 async function addScore(payload) {
-    const score = new Score(payload);
-    return await score.save();
+    try {
+        const score = new Score(payload);
+        return await score.save();
+    } catch (error) {
+        console.log(error);
+
+        return boom.badImplementation(error);
+    }
 }
 
 async function getScores(payload) {
-    return await Score.find().exec();
+    try {
+        return await Score.find().exec();
+    } catch (error) {
+        console.log(error);
+
+        return boom.badImplementation(error);
+    }
 }
 
 module.exports = {
