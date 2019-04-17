@@ -1,8 +1,9 @@
 const hapi = require("hapi");
+const mongoose = require("mongoose");
 
 const server = hapi.server({
+    host: "localhost",
     port: 4567,
-    host: "localhost"
 });
 
 const init = async () => {
@@ -28,3 +29,5 @@ const init = async () => {
 };
 
 init();
+
+mongoose.connect("mongodb://localhost/ticTacToeServer");
