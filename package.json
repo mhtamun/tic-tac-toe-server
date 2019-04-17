@@ -13,6 +13,7 @@
     "url": "https://github.com/mhtamun/tic-tac-toe-server/issues"
   },
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
