@@ -3,10 +3,6 @@ const inert = require('inert');
 const vision = require('vision');
 const mongoose = require('mongoose');
 
-const { graphqlHapi, graphiqlHapi } = require('apollo-server-hapi');
-const graphQLSchema = require('./graphql/schema');
-
-
 mongoose.connect('mongodb://localhost/ticTacToe', { useNewUrlParser: true });
 
 const db = mongoose.connection;
@@ -26,30 +22,6 @@ const init = async () => {
 		inert,
 		vision,
 		require('./plugins/score'),
-		{
-			plugin: graphqlHapi,
-			options: {
-				path: '/graphql',
-				graphqlOptions: {
-					graphQLSchema
-				},
-				route: {
-					cors: true
-				}
-			}
-		},
-		{
-			plugin: graphiqlHapi,
-			options: {
-				path: '/graphiql',
-				graphiqlOptions: {
-					endpointURL: 'graphql'
-				},
-				route: {
-					cors: true
-				},
-			}
-		}
 	]);
 
 	server.route(require('./routes'));

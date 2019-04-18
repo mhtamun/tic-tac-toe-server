@@ -1,6 +1,6 @@
 const boom = require('boom');
 const _ = require('lodash');
-const Score = require('../../models/score');
+const Score = require('../../../models/score');
 
 async function addScore(payload) {
 	try {

@@ -2,7 +2,7 @@ const Lab = require('lab');
 const Code = require('code');
 const Hapi = require('hapi');
 
-const routes = require('../routes');
+const routes = require('../hapi-server/routes');
 const scoreRoutes = require('../plugins/score/routes');
 
 // Test files must require the lab module, and export a tests script

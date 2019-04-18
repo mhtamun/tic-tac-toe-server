@@ -13,7 +13,7 @@
     "url": "https://github.com/mhtamun/tic-tac-toe-server/issues"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon src/hapi-server/index.js",
     "test": "lab src/tests/ --timeout 3000 --assert code --leaks"
   },
   "dependencies": {
