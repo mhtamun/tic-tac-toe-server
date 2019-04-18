@@ -8,7 +8,7 @@ const {
 	GraphQLSchema,
 } = graphql;
 
-const { games, Game } = require('./game');
+const { Game, games } = require('./game');
 
 const rootQuery = new GraphQLObjectType({
 	name: 'RootQueryType',
