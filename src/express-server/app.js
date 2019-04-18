@@ -8,6 +8,7 @@ const app = express();
 // bind express with graphql
 app.use('/graphql', graphqlHTTP({
 	schema,
+    graphiql: true,
 }));
 
 app.listen(4567, () => {
