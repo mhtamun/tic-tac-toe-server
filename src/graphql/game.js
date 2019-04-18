@@ -1,5 +1,10 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLInt } = graphql;
+const {
+	GraphQLObjectType,
+	GraphQLID,
+	GraphQLInt,
+	GraphQLString,
+} = graphql;
 
 const games = [
 	{
@@ -27,7 +32,7 @@ const games = [
 const Game = new GraphQLObjectType({
 	name: 'Game',
 	fields: () => ({
-		id: { type: GraphQLString },
+		id: { type: GraphQLID },
 		winner: { type: GraphQLInt }, // player 1 = 1, player 2 = 2
 		start_time: { type: GraphQLString }, // format: YYYY-MM-DD HH:mm:ss
 		end_time: { type: GraphQLString }, // format: YYYY-MM-DD HH:mm:ss
