@@ -1,7 +1,9 @@
 const graphql = require('graphql');
+const _ = require('lodash');
+
 const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
-const Game = require('./game');
+const { games, Game } = require('./game');
 
 const rootQuery = new GraphQLObjectType({
 	name: 'RootQueryType',
@@ -10,7 +12,7 @@ const rootQuery = new GraphQLObjectType({
 			type: Game,
 			args: { id: { type: GraphQLString } },
 			resolve(parent, args) {
-				// TODO logic for serving data
+				return _.find(games, { id: args.id });
 			},
 		},
 	},

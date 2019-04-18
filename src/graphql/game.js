@@ -1,6 +1,29 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLInt } = graphql;
 
+const games = [
+	{
+		id: "1",
+		winner: 1,
+		start_time: "2019-04-18T17:04:48.207Z",
+		end_time: "2019-04-18T17:09:48.207Z",
+		player_one_name: "Maruf Hossain",
+		player_one_sign: "x",
+		player_two_name: "Niger Sultana",
+		player_two_sign: "o",
+	},
+	{
+		id: "2",
+		winner: 2,
+		start_time: "2019-04-18T17:10:48.207Z",
+		end_time: "2019-04-18T17:15:48.207Z",
+		player_one_name: "Maruf Hossain",
+		player_one_sign: "x",
+		player_two_name: "Niger Sultana",
+		player_two_sign: "o",
+	}
+];
+
 const Game = new GraphQLObjectType({
 	name: 'Game',
 	fields: () => ({
@@ -15,4 +38,4 @@ const Game = new GraphQLObjectType({
 	}),
 });
 
-module.exports = Game;
+module.exports = {games, Game};
