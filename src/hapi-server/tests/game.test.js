@@ -2,8 +2,8 @@ const Lab = require('lab');
 const Code = require('code');
 const Hapi = require('hapi');
 
-const routes = require('../hapi-server/routes');
-const scoreRoutes = require('../plugins/score/routes');
+const routes = require('../routes');
+const scoreRoutes = require('../plugins/game/routes');
 
 // Test files must require the lab module, and export a tests script
 const lab = (exports.lab = Lab.script());
@@ -34,14 +34,14 @@ describe('inject request with server.inject,', () => {
 	});
 });
 
-describe('Add score,', () => {
+describe('Add game,', () => {
 	const server = new Hapi.Server();
 	server.route(scoreRoutes);
 
 	it('returns bad request when winner is not given', async () => {
 		const injectOptions = {
 			method: 'POST',
-			url: '/api/v1/scores',
+			url: '/api/v1/games',
 			payload: {
 				player_one_sign: 'x',
 				player_two_sign: 'o',
@@ -56,7 +56,7 @@ describe('Add score,', () => {
 	it('returns bad request when winner is sent as alphabets', async () => {
 		const injectOptions = {
 			method: 'POST',
-			url: '/api/v1/scores',
+			url: '/api/v1/games',
 			payload: {
 				winner: 'hey',
 			},

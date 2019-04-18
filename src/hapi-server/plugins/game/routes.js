@@ -9,13 +9,13 @@ const Relish = require('relish')({
 module.exports = [
 	{
 		method: 'POST',
-		path: '/api/v1/scores',
+		path: '/api/v1/games',
 		handler: (request, h) => {
-			return service.addScore(request.payload);
+			return service.addGame(request.payload);
 		},
 		options: {
 			tags: ['api'],
-			description: 'Insert score',
+			description: 'Insert game',
 			validate: {
 				payload: {
 					winner: Joi.number().integer().required(),
@@ -36,13 +36,13 @@ module.exports = [
 	},
 	{
 		method: 'GET',
-		path: '/api/v1/scores',
+		path: '/api/v1/games',
 		handler: (request, h) => {
-			return service.getScores();
+			return service.getGames();
 		},
 		options: {
 			tags: ['api'],
-			description: 'Read scores',
+			description: 'Read games',
 		},
 	},
 ];

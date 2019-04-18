@@ -21,7 +21,7 @@ const init = async () => {
 	await server.register([
 		inert,
 		vision,
-		require('./plugins/score'),
+		require('./plugins/game'),
 	]);
 
 	server.route(require('./routes'));

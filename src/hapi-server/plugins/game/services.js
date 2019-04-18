@@ -1,11 +1,11 @@
 const boom = require('boom');
 const _ = require('lodash');
-const Score = require('../../../models/score');
+const Game = require('../../../models/game');
 
-async function addScore(payload) {
+async function addGame(payload) {
 	try {
-		const score = new Score(payload);
-		return await score.save();
+		const game = new Game(payload);
+		return await game.save();
 	} catch (error) {
 		console.log(error);
 
@@ -13,9 +13,9 @@ async function addScore(payload) {
 	}
 }
 
-async function getScores(payload) {
+async function getGames(payload) {
 	try {
-		return await Score.find().exec();
+		return await Game.find().exec();
 	} catch (error) {
 		console.log(error);
 
@@ -24,6 +24,6 @@ async function getScores(payload) {
 }
 
 module.exports = {
-	addScore,
-	getScores,
+	addGame,
+	getGames,
 };

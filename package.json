@@ -16,7 +16,7 @@
     "start-hapi": "nodemon src/hapi-server/index.js",
     "start-express": "nodemon src/express-server/app.js",
     "start": "npm run start-express",
-    "test": "lab src/tests/ --timeout 3000 --assert code --leaks"
+    "test": "lab src/hapi-server/tests/ --timeout 3000 --assert code --leaks"
   },
   "dependencies": {
     "apollo-server-hapi": "^2.4.8",
