@@ -17,8 +17,10 @@
     "test": "lab src/tests/ --timeout 3000 --assert code --leaks"
   },
   "dependencies": {
+    "apollo-server-hapi": "^2.4.8",
     "boom": "^7.3.0",
     "code": "^5.2.4",
+    "graphql": "^14.2.1",
     "hapi": "^18.1.0",
     "inert": "^5.1.3",
     "joi": "^14.3.1",
@@ -30,6 +32,10 @@
     "vision": "^5.4.4"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
   }
 }

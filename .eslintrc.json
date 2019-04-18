@@ -28,6 +28,17 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "prefer-destructuring": [
+            "error",
+            {
+                "array": true,
+                "object": true
+            },
+            {
+                "enforceForRenamedProperties": false
+            }
+        ],
+        "object-curly-spacing": [2, "always"]
     }
 }
