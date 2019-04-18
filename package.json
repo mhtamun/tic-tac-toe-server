@@ -13,13 +13,17 @@
     "url": "https://github.com/mhtamun/tic-tac-toe-server/issues"
   },
   "scripts": {
-    "start": "nodemon src/hapi-server/index.js",
+    "start-hapi": "nodemon src/hapi-server/index.js",
+    "start-express": "nodemon src/express-server/app.js",
+    "start": "npm run start-express",
     "test": "lab src/tests/ --timeout 3000 --assert code --leaks"
   },
   "dependencies": {
     "apollo-server-hapi": "^2.4.8",
     "boom": "^7.3.0",
     "code": "^5.2.4",
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
     "graphql": "^14.2.1",
     "hapi": "^18.1.0",
     "inert": "^5.1.3",

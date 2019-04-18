@@ -1,14 +1,14 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
-const Score = require('./score');
+const Game = require('./game');
 
 const rootQuery = new GraphQLObjectType({
 	name: 'RootQueryType',
 	fields: {
-		score: {
-			type: Score,
-			args: { _id: { type: GraphQLString } },
+		game: {
+			type: Game,
+			args: { id: { type: GraphQLString } },
 			resolve(parent, args) {
 				// TODO logic for serving data
 			},
@@ -17,5 +17,5 @@ const rootQuery = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-	query: rootQuery
+	query: rootQuery,
 });
