@@ -10,8 +10,6 @@ const schema = mongoose.Schema({
 	player_two_sign: String, // x OR o
 });
 
-const Score = mongoose.model('Score', schema);
+const Game = mongoose.model('Game', schema);
 
-module.exports = Score;
-
-
+module.exports = Game;
