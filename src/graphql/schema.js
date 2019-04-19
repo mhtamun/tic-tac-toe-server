@@ -39,7 +39,7 @@ const mutation = new GraphQLObjectType({
 		addGame: {
 			type: Game,
 			args: {
-				winner: { type: new GraphQLNonNull(GraphQLInt) }, // player 1 = 1, player 2 = 2
+				winner: { type: GraphQLInt }, // player 1 = 1, player 2 = 2
 				start_time: { type: GraphQLString }, // format: YYYY-MM-DD HH:mm:ss
 				end_time: { type: GraphQLString }, // format: YYYY-MM-DD HH:mm:ss
 				player_one_name: { type: GraphQLString },
