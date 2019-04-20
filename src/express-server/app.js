@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const schema = require('../graphql/schema');
 
-mongoose.connect('mongodb://localhost/ticTacToe', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://mhtamun:YiaQiWpe8EgBfM7i@cluster0-wnsy7.mongodb.net/tic-tac-toe?retryWrites=true', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
