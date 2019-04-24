@@ -2,10 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const graphqlHTTP = require('express-graphql');
 const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const schema = require('../graphql/schema');
 
-mongoose.connect('mongodb+srv://mhtamun:YiaQiWpe8EgBfM7i@cluster0-wnsy7.mongodb.net/tic-tac-toe?retryWrites=true', { useNewUrlParser: true });
+mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -24,6 +26,6 @@ app.use('/graphql', graphqlHTTP({
 	graphiql: true,
 }));
 
-app.listen(4567, () => {
-	console.log('Now listening for requests on port 4567');
+app.listen(process.env.PORT, () => {
+	console.log(`Now listening for requests on port ${process.env.PORT}`);
 });
